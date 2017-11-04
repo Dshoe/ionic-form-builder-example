@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -6,6 +6,8 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  @ViewChild('signupSlider') signupSlider: any;
 
   constructor(public navCtrl: NavController) {
 
