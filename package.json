@@ -1,7 +1,7 @@
 {
   "name": "ionic-form-builder-example",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Devin Shoemaker",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -35,5 +35,5 @@
     "@ionic/app-scripts": "3.0.1",
     "typescript": "2.3.4"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic application example using Angular Forms."
 }
