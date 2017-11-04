@@ -13,4 +13,12 @@ export class HomePage {
 
   }
 
+  next() {
+    this.signupSlider.slideNext();
+  }
+
+  prev() {
+    this.signupSlider.slidePrev();
+  }
+
 }
