@@ -16,7 +16,28 @@
 <ion-content>
   <ion-slides #signupSlider>
     <ion-slide>
+      <ion-list no-lines>
 
+        <form [formGroup]="slideOneForm">
+
+          <ion-item>
+            <ion-label floating>First Name</ion-label>
+            <ion-input formControlName="firstName" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input formControlName="lastName" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Age</ion-label>
+            <ion-input formControlName="age" type="number"></ion-input>
+          </ion-item>
+
+        </form>
+
+      </ion-list>
     </ion-slide>
 
     <ion-slide>
