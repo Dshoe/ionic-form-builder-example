@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'page-home',
@@ -15,14 +15,14 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder) {
     this.slideOneForm = formBuilder.group({
-      firstName: [''],
-      lastName: [''],
+      firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       age: ['']
     });
 
     this.slideTwoForm = formBuilder.group({
-      username: [''],
-      privacy: [''],
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
+      privacy: ['', Validators.required],
       bio: ['']
     });
   }
