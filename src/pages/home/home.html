@@ -15,6 +15,7 @@
 
 <ion-content>
   <ion-slides #signupSlider>
+
     <ion-slide>
       <ion-list no-lines>
 
@@ -41,7 +42,33 @@
     </ion-slide>
 
     <ion-slide>
+      <ion-list no-lines>
 
+        <form [formGroup]="slideTwoForm">
+
+          <ion-item>
+            <ion-label floating>Username</ion-label>
+            <ion-input formControlName="username" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Privacy</ion-label>
+            <ion-select formControlName="privacy">
+              <ion-option value="public" checked="true">Public</ion-option>
+              <ion-option value="friends">Friends Only</ion-option>
+              <ion-option value="private">Private</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Bio</ion-label>
+            <ion-textarea formControlName="bio"></ion-textarea>
+          </ion-item>
+
+        </form>
+
+      </ion-list>
     </ion-slide>
+
   </ion-slides>
 </ion-content>

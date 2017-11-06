@@ -11,12 +11,19 @@ export class HomePage {
   @ViewChild('signupSlider') signupSlider: any;
 
   slideOneForm: FormGroup;
+  slideTwoForm: FormGroup;
 
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder) {
     this.slideOneForm = formBuilder.group({
       firstName: [''],
       lastName: [''],
       age: ['']
+    });
+
+    this.slideTwoForm = formBuilder.group({
+      username: [''],
+      privacy: [''],
+      bio: ['']
     });
   }
 
