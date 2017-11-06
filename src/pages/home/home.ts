@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { AgeValidator } from "../../validators/age";
 
 @Component({
   selector: 'page-home',
@@ -17,7 +18,7 @@ export class HomePage {
     this.slideOneForm = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      age: ['']
+      age: ['', AgeValidator.isValid]
     });
 
     this.slideTwoForm = formBuilder.group({
