@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AgeValidator } from "../../validators/age";
+import { UsernameValidator } from "../../validators/username";
 
 @Component({
   selector: 'page-home',
@@ -22,7 +23,7 @@ export class HomePage {
     });
 
     this.slideTwoForm = formBuilder.group({
-      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')])],
+      username: ['', Validators.compose([Validators.required, Validators.pattern('[a-zA-Z]*')]), UsernameValidator.checkUsername],
       privacy: ['', Validators.required],
       bio: ['']
     });
