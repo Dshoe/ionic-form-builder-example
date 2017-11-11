@@ -28,14 +28,26 @@
             <ion-input formControlName="firstName" type="text" [class.invalid]="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)"></ion-input>
           </ion-item>
 
+          <ion-item *ngIf="!slideOneForm.controls.firstName.valid && (slideOneForm.controls.firstName.dirty || submitAttempt)">
+            <p>Please enter a valid name.</p>
+          </ion-item>
+
           <ion-item>
             <ion-label floating>Last Name</ion-label>
             <ion-input formControlName="lastName" type="text" [class.invalid]="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.lastName.dirty || submitAttempt)"></ion-input>
           </ion-item>
 
+          <ion-item *ngIf="!slideOneForm.controls.lastName.valid && (slideOneForm.controls.lastName.dirty || submitAttempt)">
+            <p>Please enter a valid name.</p>
+          </ion-item>
+
           <ion-item>
             <ion-label floating>Age</ion-label>
             <ion-input formControlName="age" type="number" [class.invalid]="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)"></ion-input>
+          </ion-item>
+
+          <ion-item *ngIf="!slideOneForm.controls.age.valid && (slideOneForm.controls.age.dirty || submitAttempt)">
+            <p>Please enter a valid age.</p>
           </ion-item>
 
         </form>
@@ -53,6 +65,14 @@
             <ion-input formControlName="username" type="text" [class.invalid]="!slideTwoForm.controls.username.valid && (slideTwoForm.controls.username.dirty || submitAttempt)"></ion-input>
           </ion-item>
 
+          <ion-item *ngIf="slideTwoForm.controls.username.pending">
+            <p>Checking username...</p>
+          </ion-item>
+
+          <ion-item *ngIf="!slideTwoForm.controls.username.valid && !slideTwoForm.controls.username.pending && (slideTwoForm.controls.username.dirty || submitAttempt)">
+            <p>Sorry, that username can not be used!</p>
+          </ion-item>
+
           <ion-item>
             <ion-label floating>Privacy</ion-label>
             <ion-select formControlName="privacy" [class.invalid]="!slideTwoForm.controls.privacy.valid && (slideTwoForm.controls.privacy.dirty || submitAttempt)">
@@ -60,6 +80,10 @@
               <ion-option value="friends">Friends Only</ion-option>
               <ion-option value="private">Private</ion-option>
             </ion-select>
+          </ion-item>
+
+          <ion-item *ngIf="!slideTwoForm.controls.privacy.valid && (slideTwoForm.controls.privacy.dirty || submitAttempt)">
+            <p>Please select a level of privacy.</p>
           </ion-item>
 
           <ion-item>
