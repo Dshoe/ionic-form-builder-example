@@ -15,6 +15,8 @@ export class HomePage {
   slideOneForm: FormGroup;
   slideTwoForm: FormGroup;
 
+  submitAttempt: boolean = false;
+
   constructor(public navCtrl: NavController, public formBuilder: FormBuilder) {
     this.slideOneForm = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -35,6 +37,20 @@ export class HomePage {
 
   prev() {
     this.signupSlider.slidePrev();
+  }
+
+  save() {
+    this.submitAttempt = true;
+
+    if (!this.slideOneForm.valid) {
+      this.signupSlider.slideTo(0);
+    } else if (!this.slideTwoForm.valid) {
+      this.signupSlider.slideTo(1);
+    } else {
+      console.log("success!");
+      console.log(this.slideOneForm.value);
+      console.log(this.slideTwoForm.value);
+    }
   }
 
 }

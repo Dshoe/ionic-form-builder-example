@@ -17,6 +17,8 @@
   <ion-slides #signupSlider>
 
     <ion-slide>
+      <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
       <ion-list no-lines>
 
         <form [formGroup]="slideOneForm">
@@ -68,6 +70,8 @@
         </form>
 
       </ion-list>
+
+      <button ion-button full color="primary" (click)="save()">Create Account</button>
     </ion-slide>
 
   </ion-slides>
